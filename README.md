@@ -1,10 +1,10 @@
 # public_ocr
 
----
-Pytorch를 사용한 공공행정문서 OCR
-## 프로세스
 
----
+Pytorch를 사용한 공공행정문서 OCR
+## Pipeline
+
+
 ![image](https://user-images.githubusercontent.com/46219219/150891274-467d1d04-d53b-47ce-88f5-52d1abe523bd.png)
 
 ## Requirments
@@ -23,12 +23,20 @@ Pytorch를 사용한 공공행정문서 OCR
 - nltk
 - natsort
 
-## 2. 사용법
-1. img 폴더 안에 OCR할 파일 첨부
-2. main.py 실행
-3. log_result.txt에 OCR 내용 저장됨
+## Pretrained
+|모델|링크|
+|------|---|
+|detection|[pretrained](https://o365hansung-my.sharepoint.com/:f:/g/personal/gs3071_hansung_edu/EtufZdMj9hpLmAnCHh0ixaoBoG7mg6fevtvETi_jMBdm_g?e=cIgwTg)|
+|recogntion|[pretrained](https://o365hansung-my.sharepoint.com/:f:/g/personal/gs3071_hansung_edu/Em0UPM2e_m9KmwQEbLeSeJ8BEWI43ewudS6sKgoMAf46Lg?e=nDWQRI)|
 
-## 3. 결과
+
+## How to use
+1. weight 파일에 pretrained 모델 다운
+2. img 폴더 안에 OCR할 파일 첨부
+3. main.py 실행
+4. log_result.txt에 OCR 내용 저장됨
+
+## Result
 Text detection 결과
 ![screensh](./yolo/1.jpg)
 
@@ -49,6 +57,7 @@ score : 0.8901
 - [ ] 내용 첨부
 - [ ] 리팩터링
 - [ ] 로그 파일 출력 내용 수정
+- [ ] README.md 내용 추가
 
 ## 참고 사이트
 
