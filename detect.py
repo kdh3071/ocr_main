@@ -17,23 +17,21 @@ from utils.general import (
 from utils.torch_utils import select_device, load_classifier, time_synchronized
 
 
-def detect(save_img=False):
+def detect(my_device,save_img=False):
     save_dir = './yolo'
     my_source = './img'
     my_weights = './weight/detect/best.pt'
     my_img_size = 640
     conf_thres = 0.25
     iou_thres = 0.01
-    if torch.cuda.is_available():
-        my_device= '0'
-    else:
-        my_device = 'cpu'
+
     out, source, weights, view_img, save_txt, imgsz = \
         save_dir, my_source, my_weights, False, True, my_img_size
 
     # Initialize
     set_logging()
-    device = select_device(my_device)
+    #device = select_device(my_device)
+    device = my_device
     if os.path.exists(out):  # output dir
         shutil.rmtree(out)  # delete dir
     os.makedirs(out)  # make new dir

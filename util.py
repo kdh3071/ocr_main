@@ -1,6 +1,6 @@
+# -*- coding: utf-8 -*-
 import torch
 import json
-import glob
 import os
 import datetime
 from PIL import Image
@@ -52,17 +52,16 @@ class AttnLabelConverter(object):
             texts.append(text)
         return texts
 
-def make_json(img_dir,pred_text_list,xywh):
-    ori_img = glob.glob(img_dir+'/*')[0]
-    img = Image.open(ori_img)
+def make_json(img_path,pred_text_list,xywh):
+    img = Image.open(img_path)
     width, height = img.size
 
-    result = {'images': [{"image.make.code": 'None',
-                          "image.make.year": datetime.datetime.today().strftime('%Y'),
+    result = {'images': [{"image.make.code": os.path.basename(img_path).split('-')[0],
+                          "image.make.year": os.path.basename(img_path).split('-')[1],
                           "image.category": 'None',
                           "image.width": width,
                           "image.height": height,
-                          "image.file.name": os.path.basename(ori_img),
+                          "image.file.name": os.path.basename(img_path),
                           "image.create.time": datetime.datetime.today().strftime(
                               '%Y-%m-%d %H:%M:%S')}],  # datetime.datetime.today().strftime('%Y-%m-%d %H:%M:%S')
 
@@ -76,8 +75,7 @@ def make_json(img_dir,pred_text_list,xywh):
                                       "annotation.text": pred_text_list[idx],
                                       "annotation.bbox": [int(xywh[idx][0]), int(xywh[idx][1]), int(xywh[idx][2]), int(xywh[idx][3])]})
 
-    with open(f"./json/{os.path.basename(ori_img)[:-4]}.json", 'w', encoding='utf-8') as outfile:
+    with open(f"./json/{os.path.basename(img_path)[:-4]}.json", 'w', encoding='utf-8') as outfile:
         json.dump(result, outfile, indent=4, ensure_ascii=False)
     print("json saved!")
     img.close()
-    os.remove(ori_img)
