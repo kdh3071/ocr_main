@@ -1,7 +1,7 @@
 # public_ocr
 
 
-Pytorch를 사용한 공공행정문서 OCR
+Pytorch를 사용한 공공행정문서 OCR 실행 코드
 ## Pipeline
 
 
