@@ -104,7 +104,7 @@ def run(target,save_json = False):
 
             # log
             avg_score = score/len(data)
-            log = open(f'./log_demo_result.txt', 'a',encoding='utf-8')
+            log = open(f'./log_result.txt', 'a',encoding='utf-8')
             dashed_line = '-' * 80
             head = f'{"image_path":25s}\n{"predicted_labels":25s}\nconfidence score'
             log.write(f'{dashed_line}\n{head}\n{dashed_line}\n')
