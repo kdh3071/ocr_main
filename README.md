@@ -38,7 +38,7 @@ Pytorch를 사용한 공공행정문서 OCR 실행 코드
 
 ## Result
 Text detection 결과
-![screensh](./yolo/1.jpg)
+![1](https://user-images.githubusercontent.com/46219219/150907618-905fb374-33d5-421e-86be-23f76a668c06.jpg)
 
 Text Recognition 결과
 
