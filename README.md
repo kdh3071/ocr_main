@@ -59,7 +59,7 @@ score : 0.8901
 - [ ] 로그 파일 출력 내용 수정
 - [ ] README.md 내용 추가
 
-## 참고 사이트
+## Reference
 
 ---
 - [Yolov5](https://github.com/ultralytics/yolov5)
