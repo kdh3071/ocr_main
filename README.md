@@ -50,7 +50,7 @@ score : 0.8901
 
 ## To-Do List
 
----
+
 - [ ] try-except를 통해 오류 발생시 프로그램 멈춤 현상 방지
 - [ ] 안쓰이는 파일 제거
 - [ ] json 출력
@@ -61,7 +61,7 @@ score : 0.8901
 
 ## Reference
 
----
+
 - [Yolov5](https://github.com/ultralytics/yolov5)
 - [deep-text-recognition-benchmark](https://github.com/clovaai/deep-text-recognition-benchmark)
 - [aihub-공공행정문서OCR](https://aihub.or.kr/aidata/30724)
